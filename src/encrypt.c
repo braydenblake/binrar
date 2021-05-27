@@ -87,6 +87,20 @@ void shift_decrypt(FILE *fd1, FILE *fd2)
     shift_encrypt_bytes(fd1, fd2, -SHIFT_AMOUNT);
 }
 
+/*****************************************************************************
+ * This function encrypts the file using an XOR cipher, an additive cipher 
+ * using a supplied key. This function is also used to decrypt the cipher.
+  
+    * Example: 
+            input string : The quick brown fox jumps over the lazy dog
+            input key : password
+            ouput string : $	SADSARSDy
+ * Input:
+ *   input file, empty output file and key(password)
+ * Output:
+ *   New output file
+*****************************************************************************/
+
 void XOR_cipher(FILE *in_file, FILE *out_file, char *key)
 {
     int i = 0;
